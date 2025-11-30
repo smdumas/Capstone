@@ -1,0 +1,119 @@
+body {
+  /* background-color: #e56d27;  now trying to get a jumbotrone*/
+  /* background-image: url("../docs/Family_Tree_Logo_White.jpg"); */
+
+  background-image: url("../docs/Family_Tree_Logo.png");
+  background-repeat: no-repeat;
+  backgorund-position: center;
+  filter: brightness(50%);
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+}
+
+.background {
+  z-index: -1;
+  background-image: url("../docs/Family_Tree_Logo.png");
+  background-repeat: no-repeat;
+  backgorund-position: center;
+  filter: brightness(50%);
+  background-color: #ffffff99;
+  opacity: 0.5;
+}
+
+.image {
+  width 50%;
+  height: 50%;
+  background-position: center;
+  background-size: contain;
+  background-image: "docs/Family_Tree_Logo_White.jpg";
+  disiplay: flex;
+  position: relative;
+
+}
+
+div {
+  img: transparent;
+  background-filter: blur(10px);
+
+}
+
+
+img class opacity-bg-image::after {
+  content: '';
+  /* position: absolute; */
+  /* inset: -1;
+  z-index: 1;
+  background: #5927e5; */
+  */
+  /* background-image: url("../docs/Family_Tree_Logo_White.jpg"); */
+  /* } */
+
+
+
+  .lineOne {
+    background-color: #5927e5;
+    color: #fefffe;
+  }
+
+  .lineThree {
+    background-color: #fefffe;
+    color: #5927e4;
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    position: relative;
+  }
+
+  title {
+    font-display: #5927e5;
+
+  }
+
+  nav>ul>li {
+    border: solid 1px;
+    padding: .33em;
+    display: inline-block;
+    font-display: #5927e5;
+  }
+
+  footer {
+    padding: .5em;
+    background-color: #fefffe;
+
+  }
+
+  h1 {
+    position: relative;
+    font-color: blue;
+  }
+
+  .blue-list {
+    font-color: rgb(31, 6, 6);
+    font-bold;
+    background-color: rgb(255, 0, 149);
+  }
+
+  .index-titletab {
+    font-size: 20;
+    background-color: #66c4a9;
+
+  }
+
+  /* @media (max-width: 667px){
+
+  } */
+
+  /* # History:;
+
+  # content:;
+
+  # contact:; */
+  /* footer {
+    padding: 1rem;
+    border: 5px solid #5927E5;
+  } */

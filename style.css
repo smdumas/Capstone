@@ -2,7 +2,7 @@ body {
   /* background-color: #e56d27;  now trying to get a jumbotrone*/
   /* background-image: url("../docs/Family_Tree_Logo_White.jpg"); */
 
-  background-image: url("../docs/Family_Tree_Logo.png");
+  background-image: url("assets/img/Family_Tree_Logo_White.jpg");
   background-repeat: no-repeat;
   backgorund-position: center;
   filter: brightness(50%);
@@ -13,7 +13,7 @@ body {
 
 .background {
   z-index: -1;
-  background-image: url("../docs/Family_Tree_Logo.png");
+  background-image: url("assets/img/Family_Tree_Logo_White.jpg");
   background-repeat: no-repeat;
   backgorund-position: center;
   filter: brightness(50%);
@@ -22,7 +22,7 @@ body {
 }
 
 .image {
-  width 50%;
+  width: 50%;
   height: 50%;
   background-position: center;
   background-size: contain;
@@ -45,7 +45,7 @@ img class opacity-bg-image::after {
   /* inset: -1;
   z-index: 1;
   background: #5927e5; */
-  */
+
   /* background-image: url("../docs/Family_Tree_Logo_White.jpg"); */
   /* } */
 
@@ -94,7 +94,7 @@ img class opacity-bg-image::after {
 
   .blue-list {
     font-color: rgb(31, 6, 6);
-    font-bold;
+
     background-color: rgb(255, 0, 149);
   }
 

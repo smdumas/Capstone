@@ -1,6 +1,6 @@
 import html from "html-literal";
 // Example of using a component inside another component
-import navItem from "./navItem.js";
+import navItem from "./navitem.js";
 
 // constructing an HTML list of items from the array in Store
 //  - .map formats the array elements into html

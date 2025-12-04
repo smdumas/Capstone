@@ -17,7 +17,7 @@ function render(state = store.home) {
 
   router.updatePageLinks()
 }
-// https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}=&units=imperial&q=st%20louis
+
 router.hooks({
   // We pass in the `done` function to the before hook handler to allow the function to tell Navigo we are finished with the before hook.
   // The `match` parameter is the data that is passed from Navigo to the before hook handler with details about the route being accessed.
@@ -29,7 +29,7 @@ router.hooks({
     switch (view) {
       // Add a case for each view that needs data from an API
       case "home":
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}=&units=imperial&q=st%20louis`).then(response => {
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}&units=imperial&q=st%20louis`).then(response => {
 
           console.log("Weather response.data", response.data)
           store.home.weather = {

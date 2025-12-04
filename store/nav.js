@@ -1,9 +1,11 @@
-<nav>
-  <ul>
-    <li class="navitem"><a href="#">🏠 Home</a></li>
-    <li class="navitem"><a href="#">📄 About</a></li>
-    <li><a href="#">🖼️ History</a></li>
-    <li><a href="#">Content</a></li>
-    <li><a href="#">📞 Contact</a></li>
-  </ul>
-</nav>
+export default [
+  { url: "/home", text: "Home" },
+  { url: "/history", text: "History" },
+  { url: "/content", text: "Content" },
+  { url: "/contact", text: "Contact" }
+
+]
+
+
+
+

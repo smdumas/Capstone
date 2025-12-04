@@ -17,7 +17,7 @@ function render(state = store.home) {
 
   router.updatePageLinks()
 }
-// https://api.openweathermap.org/data/2.5/weather?APPID${process.env.OPEN_WEATHER_MAP_API_KEY}=&units=imperial&q=st%20louis
+// https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}=&units=imperial&q=st%20louis
 router.hooks({
   // We pass in the `done` function to the before hook handler to allow the function to tell Navigo we are finished with the before hook.
   // The `match` parameter is the data that is passed from Navigo to the before hook handler with details about the route being accessed.
@@ -29,7 +29,7 @@ router.hooks({
     switch (view) {
       // Add a case for each view that needs data from an API
       case "home":
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?APPID=67b4a4c369f5158f7db7ca60304c7d21&units=imperial&q=st%20louis`).then(response => {
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}=&units=imperial&q=st%20louis`).then(response => {
 
           console.log("Weather response.data", response.data)
           store.home.weather = {
@@ -44,21 +44,21 @@ router.hooks({
           done();
         });
         break;
-      case "family":
-        // New Axios get request utilizing already made environment variable
-        axios
-          .get(`${process.env.FAMILY_PLACE_API_URL}/family`)
-          .then(response => {
-            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-            console.log("response", response);
-            store.FAMILY.family = response.data;
-            done();
-          })
-          .catch((error) => {
-            console.log("response", response);
-            done();
-          });
-        break;
+      // case "family":
+      //   // New Axios get request utilizing already made environment variable
+      //   axios
+      //     .get(`${process.env.FAMILY_PLACE_API_URL}/family`)
+      //     .then(response => {
+      //       // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+      //       console.log("response", response);
+      //       store.FAMILY.family = response.data;
+      //       done();
+      //     })
+      //     .catch((error) => {
+      //       console.log("response", response);
+      //       done();
+      //     });
+      //   break;
       default:
         // We must call done for all views so we include default for the views that don't have cases above.
         done();
@@ -80,52 +80,52 @@ router.hooks({
       document.querySelector("nav > ul").classList.toggle("hidden--mobile");
     });
 
-    if (view === "order") {
-      // Add an event handler for the submit button on the form
-      document.querySelector("form").addEventListener("submit", event => {
-        event.preventDefault();
+    // if (view === "order") {
+    //   // Add an event handler for the submit button on the form
+    //   document.querySelector("form").addEventListener("submit", event => {
+    //     event.preventDefault();
 
-        // Get the form element
-        const inputList = event.target.elements;
-        console.log("Input Element List", inputList);
+    //     // Get the form element
+    //     const inputList = event.target.elements;
+    //     console.log("Input Element List", inputList);
 
-        // Create an empty array to hold the location
-        const location = [];
+    //     // Create an empty array to hold the location
+    //     const location = [];
 
-        // Iterate over the city array
+    //     // Iterate over the city array
 
-        for (let input of inputList.location) {
-          // If the value of the checked attribute is true then add the value to the location array
-          if (input.checked) {
-            location.push(input.value);
-          }
-        }
+    //     for (let input of inputList.location) {
+    //       // If the value of the checked attribute is true then add the value to the location array
+    //       if (input.checked) {
+    //         location.push(input.value);
+    //       }
+    //     }
 
-        // Create a request body object to send to the API
-        const requestData = {
-          customer: inputList.customer.value,
-          aboutMe: inputList.aboutMe.value,
-          history: inputList.history.value,
-          home: inputList.home.value,
-          contacts: inputList.contacts.value,
-        };
-        // Log the request body to the console
-        console.log("request Body", requestData);
+    //     // Create a request body object to send to the API
+    //     const requestData = {
+    //       customer: inputList.customer.value,
+    //       aboutMe: inputList.aboutMe.value,
+    //       history: inputList.history.value,
+    //       home: inputList.home.value,
+    //       contacts: inputList.contacts.value,
+    //     };
+    //     // Log the request body to the console
+    //     console.log("request Body", requestData);
 
-        axios
-          // Make a POST request to the API to create a new family
-          .post(`${process.env.FAMILY_PLACE_API_URL}/family`, requestData)
-          .then(response => {
-            //  Then push the new Family onto the Family state family attribute, so it can be displayed in the Family list
-            store.Family.family.push(response.data);
-            router.navigate("/Family");
-          })
-          // If there is an error log it to the console
-          .catch(error => {
-            console.log("It puked", error);
-          });
-      });
-    }
+    //     axios
+    //       // Make a POST request to the API to create a new family
+    //       .post(`${process.env.FAMILY_PLACE_API_URL}/family`, requestData)
+    //       .then(response => {
+    //         //  Then push the new Family onto the Family state family attribute, so it can be displayed in the Family list
+    //         store.Family.family.push(response.data);
+    //         router.navigate("/Family");
+    //       })
+    //       // If there is an error log it to the console
+    //       .catch(error => {
+    //         console.log("It puked", error);
+    //       });
+    //   });
+    // }
 
   }
 });

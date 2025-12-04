@@ -1,16 +1,8 @@
 import html from "html-literal";
 
-export default () => html`
+export default (state) => html`
 <header>
-    <nav>
-      <a href="Link to Contacts"></a>
-
-      <ul>
-
-        <li><a href="About.html">About</a></li>
-        <li><a href="Content.html">Content</a></li>
-      </ul>
-    </nav>
+   <h1>${state.header}</h1>
 
   </header>
   `;

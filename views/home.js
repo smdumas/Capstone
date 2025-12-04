@@ -6,9 +6,26 @@ export default () => html`
 </div>
 
 
-<h1>Family Fun</h1>
+<h1>Unify your Love Ones </h1>
 <div id="h2">
   <class="border-image">
+
+    <p>
+    <br>
+    Imagine designing a user friendly site for you family and friends to collaborate as often as you like with ease.
+    You may want to share your recent job promotion, family addition, create new connections and more. This is part of
+    the reason Family Fun was created.
+    <br>
+    Simply complete the form and someone from our staff will contact you to assist with your needs based on the city you
+    inserted
+    on the contact form or identify what city you would like to make your conncetion(s).
+    <br>
+    We are looking forward to a new experience with you!
+
+    <br>
+
+
+  </p>
 </div>
 
 </div>

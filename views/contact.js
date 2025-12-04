@@ -16,10 +16,6 @@ export default () =>
       </div>
       <br>
 
-        <div>
-          <input type= "submit"/>
-        </div>
-
         <label for="phone"> phone #:</label>
         <input type="tel" id="phone" name="phone" placeholder="(123-123-1234)" required>
           <div>
@@ -27,6 +23,10 @@ export default () =>
             <label for="email"> email:</label>
             <input type="email" id="email" name="email" placeholder="customeremail@gmail.com" required/>
           </div>
+
+        <div>
+          <input type= "submit"/>
+        </div>
 
 /</body>
         </form>`

@@ -1,4 +1,5 @@
 export default {
   header: "Insert Your Information",
-  view: "contact"
+  view: "contact",
+  contacts: []
 }

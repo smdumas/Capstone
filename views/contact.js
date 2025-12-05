@@ -3,8 +3,9 @@ export default () =>
 
 
 
-  html`<form>
+  html`
 <body>
+  <form>
       <div>
         <label for="fname"> first name:</label>
         <input type="text" id="fname" name="fname" placeholder="FnameCustomer" required>
@@ -25,9 +26,8 @@ export default () =>
           </div>
 
         <div>
-          <input type= "submit"/>
+          <input type= "submit">
         </div>
-
-/</body>
-        </form>`
+</form>
+/</body>`
 

@@ -80,52 +80,52 @@ router.hooks({
       document.querySelector("nav > ul").classList.toggle("hidden--mobile");
     });
 
-    // if (view === "order") {
-    //   // Add an event handler for the submit button on the form
-    //   document.querySelector("form").addEventListener("submit", event => {
-    //     event.preventDefault();
+    if (view === "contact") {
+      // Add an event handler for the submit button on the form
+      document.querySelector("form").addEventListener("submit", event => {
+        event.preventDefault();
 
-    //     // Get the form element
-    //     const inputList = event.target.elements;
-    //     console.log("Input Element List", inputList);
+        // Get the form element
+        const inputList = event.target.elements;
+        console.log("Input Element List", inputList);
 
-    //     // Create an empty array to hold the location
-    //     const location = [];
+        // Create an empty array to hold the location
+        // const location = [];
 
-    //     // Iterate over the city array
+        // Iterate over the city array
 
-    //     for (let input of inputList.location) {
-    //       // If the value of the checked attribute is true then add the value to the location array
-    //       if (input.checked) {
-    //         location.push(input.value);
-    //       }
-    //     }
+        // for (let input of inputList) {
+        //   // If the value of the checked attribute is true then add the value to the location array
+        //   // if (input.checked) {
+        //     location.push(input.value);
+        //   }
+        // }
 
-    //     // Create a request body object to send to the API
-    //     const requestData = {
-    //       customer: inputList.customer.value,
-    //       aboutMe: inputList.aboutMe.value,
-    //       history: inputList.history.value,
-    //       home: inputList.home.value,
-    //       contacts: inputList.contacts.value,
-    //     };
-    //     // Log the request body to the console
-    //     console.log("request Body", requestData);
+        // Create a request body object to send to the API
+        const requestData = {
+          fname: inputList.fname.value,
+          lname: inputList.lname.value,
+          phone: inputList.phone.value,
+          email: inputList.email.value,
 
-    //     axios
-    //       // Make a POST request to the API to create a new family
-    //       .post(`${process.env.FAMILY_PLACE_API_URL}/family`, requestData)
-    //       .then(response => {
-    //         //  Then push the new Family onto the Family state family attribute, so it can be displayed in the Family list
-    //         store.Family.family.push(response.data);
-    //         router.navigate("/Family");
-    //       })
-    //       // If there is an error log it to the console
-    //       .catch(error => {
-    //         console.log("It puked", error);
-    //       });
-    //   });
-    // }
+        };
+        // Log the request body to the console
+        console.log("request Body", requestData);
+
+        axios
+          // Make a POST request to the API to create a new family
+          .post(`${process.env.FAMILY_PLACE_API_URL}/contact`, requestData)
+          .then(response => {
+            //  Then push the new Family onto the Family state family attribute, so it can be displayed in the Family list
+            store.contact.contacts.push(response.data);
+            router.navigate("/contact");
+          })
+          // If there is an error log it to the console
+          .catch(error => {
+            console.log("It puked", error);
+          });
+      });
+    }
 
   }
 });

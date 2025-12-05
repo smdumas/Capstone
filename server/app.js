@@ -3,8 +3,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import mongoose from "mongoose"
-  ;
+import mongoose from "mongoose";
+import contact from './controllers/contact.js';
+
 // Load environment variables from .env file
 dotenv.config();
 
@@ -32,23 +33,17 @@ db.once(
   console.log.bind(console, "Successfully opened connection to Mongo!")
 );
 
-/*
-  express supports chaining `use()` statements,
-  so the above 2 statements could look like this as well
-  app.use(express.json()).use(logging)
-*/
-// Handle the request with HTTP GET method from http://localhost:3000/
 app.get("/", (request, response) => {
   response.send("Welcome to the Class SPA REST API");
 });
 // do not use line 34 - 40 for my Capstone
 // Handle the request with HTTP GET method from http://localhost:3000/status
-// app.get("/status", (request, response) => {
-// Create the headers for response by default 200
-// Create the response body
-// End and return the response
-// response.json({ message: "Service healthy" });
-// });
+app.get("/status", (request, response) => {
+  // Create the headers for response by default 200
+  // Create the response body
+  // End and return the response
+  response.json({ message: "Service healthy" });
+});
 
 // Handle the request with HTTP GET method with query parameters and a url parameter
 app.get("/weather/:city", (request, response) => {
@@ -78,7 +73,7 @@ app.get("/weather/:city", (request, response) => {
   });
 });
 
-
+app.use("/contact", contact);
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 3000
 const server = app.listen(PORT, () => console.log(`Listening on port ${server.address().port}`));

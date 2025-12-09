@@ -34,7 +34,7 @@ db.once(
 );
 
 app.get("/", (request, response) => {
-  response.send("Welcome to the Class SPA REST API");
+  response.send("Welcome to the Family-Fun-Capstone REST API");
 });
 // do not use line 34 - 40 for my Capstone
 // Handle the request with HTTP GET method from http://localhost:3000/status

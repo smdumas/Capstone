@@ -27,7 +27,7 @@ body {
   background-position: center;
   background-size: contain;
   background-image: "docs/Family_Tree_Logo_White.jpg";
-  disiplay: flex;
+  display: flexbox;
   position: relative;
 
 }

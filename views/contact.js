@@ -29,5 +29,5 @@ export default () =>
           <input type= "submit">
         </div>
 </form>
-/</body>`
+</body>`
 
